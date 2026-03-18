@@ -14,8 +14,11 @@ st.set_page_config(
 # ======================================
 # Load Model & Data
 # ======================================
-model = joblib.load("final_random_forest_model.pkl")
-df = pd.read_csv("cars24_20221210.csv")
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = joblib.load(os.path.join(BASE_DIR, "final_random_forest_model.pkl"))
+df = pd.read_csv(os.path.join(BASE_DIR, "cars24_20221210.csv"))
 
 # ======================================
 # Title & Header
